@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  resultados.dtd
+  Reglas de validacion para documentos de resultados y estadisticas de Liga MX.
+
+  Jerarquia (la sangria indica "contiene a"):
+    liga
+      jornada (1..n)
+        partido (1..n)
+          equipoLocal (exactamente uno)
+            nombre
+            estadisticas (opcional)
+            gol (cero o mas)
+            tarjeta (cero o mas)
+          equipoVisitante (exactamente uno, mismo contenido que el local)
+          marcador
+          estadio
+-->
+
+<!-- Contenido comun de ambos equipos: se declara una sola vez (sin duplicar) -->
+<!ENTITY % contenidoEquipo "(nombre, estadisticas?, gol*, tarjeta*)">
+
+<!-- ========== Raiz ========== -->
+<!ELEMENT liga (jornada+)>
+<!ATTLIST liga
+  competencia CDATA #REQUIRED
+  torneo      CDATA #REQUIRED
+  temporada   CDATA #REQUIRED>
+
+<!-- ========== Jornada ========== -->
+<!ELEMENT jornada (partido+)>
+<!ATTLIST jornada
+  numero NMTOKEN #REQUIRED>
+
+<!-- ========== Partido ========== -->
+<!ELEMENT partido (equipoLocal, equipoVisitante, marcador, estadio)>
+<!ATTLIST partido
+  id     ID       #REQUIRED
+  fecha  NMTOKEN  #REQUIRED
+  hora   NMTOKEN  #IMPLIED
+  estado (programado | en_juego | finalizado | suspendido | aplazado) #REQUIRED>
+
+<!ELEMENT equipoLocal      %contenidoEquipo;>
+<!ELEMENT equipoVisitante  %contenidoEquipo;>
+
+<!ELEMENT nombre (#PCDATA)>
+
+<!ELEMENT marcador EMPTY>
+<!ATTLIST marcador
+  golesLocal     NMTOKEN #REQUIRED
+  golesVisitante NMTOKEN #REQUIRED>
+
+<!ELEMENT estadio (#PCDATA)>
+<!ATTLIST estadio
+  ciudad CDATA #IMPLIED>
+
+<!-- ========== Estadisticas por equipo ========== -->
+<!ELEMENT estadisticas (posesion, tiros, tirosAPuerta, faltas, tirosEsquina)>
+<!ELEMENT posesion     (#PCDATA)>  <!-- porcentaje entero, 0-100 -->
+<!ELEMENT tiros        (#PCDATA)>  <!-- tiros totales -->
+<!ELEMENT tirosAPuerta (#PCDATA)>
+<!ELEMENT faltas       (#PCDATA)>  <!-- faltas cometidas -->
+<!ELEMENT tirosEsquina (#PCDATA)>
+
+<!-- ========== Eventos del partido ========== -->
+<!-- El gol se registra en el equipo que lo ANOTA en el marcador.
+     En un autogol, "jugador" pertenece al equipo contrario. -->
+<!ELEMENT gol EMPTY>
+<!ATTLIST gol
+  jugador   CDATA   #REQUIRED
+  minuto    NMTOKEN #REQUIRED
+  adicional NMTOKEN #IMPLIED
+  tipo      (normal | penal | autogol) "normal">
+
+<!ELEMENT tarjeta EMPTY>
+<!ATTLIST tarjeta
+  tipo      (amarilla | roja) #REQUIRED
+  jugador   CDATA   #REQUIRED
+  minuto    NMTOKEN #REQUIRED
+  adicional NMTOKEN #IMPLIED>
