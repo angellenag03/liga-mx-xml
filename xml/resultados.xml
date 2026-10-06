@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE liga SYSTEM "../dtd/resultados.dtd">
+<!--
+  Jornada 10 - Apertura 2026 de Liga MX.
+  Solo se incluyen los partidos del domingo 27 de septiembre de 2026.
+  Horas en tiempo del centro de Mexico. Datos recopilados el 2026-10-06
+  (ver README.md, seccion "Fuentes y calidad de los datos").
+-->
+<liga competencia="Liga MX" torneo="Apertura 2026" temporada="2026-2027">
+  <jornada numero="10">
+
+    <partido id="P001" fecha="2026-09-27" hora="12:00" estado="finalizado">
+      <equipoLocal>
+        <nombre>Pumas UNAM</nombre>
+        <estadisticas>
+          <posesion>54</posesion>
+          <tiros>15</tiros>
+          <tirosAPuerta>6</tirosAPuerta>
+          <faltas>12</faltas>
+          <tirosEsquina>11</tirosEsquina>
+        </estadisticas>
+        <gol jugador="Rodrigo López" minuto="52"/>
+        <gol jugador="Juninho" minuto="90" tipo="penal"/>
+        <tarjeta tipo="amarilla" jugador="César Huerta" minuto="45" adicional="1"/>
+      </equipoLocal>
+      <equipoVisitante>
+        <nombre>Atlético de San Luis</nombre>
+        <estadisticas>
+          <posesion>46</posesion>
+          <tiros>11</tiros>
+          <tirosAPuerta>7</tirosAPuerta>
+          <faltas>10</faltas>
+          <tirosEsquina>2</tirosEsquina>
+        </estadisticas>
+        <gol jugador="Sébastien Salles-Lamonge" minuto="23" tipo="penal"/>
+        <gol jugador="David Rodríguez" minuto="54"/>
+        <gol jugador="Sébastien Salles-Lamonge" minuto="79" tipo="penal"/>
+        <tarjeta tipo="amarilla" jugador="Óscar Macías" minuto="45" adicional="1"/>
+        <tarjeta tipo="amarilla" jugador="Román Torres" minuto="84"/>
+      </equipoVisitante>
+      <marcador golesLocal="2" golesVisitante="3"/>
+      <estadio ciudad="Ciudad de México">Estadio Olímpico Universitario</estadio>
+    </partido>
+
+    <partido id="P002" fecha="2026-09-27" hora="19:00" estado="finalizado">
+      <equipoLocal>
+        <nombre>León</nombre>
+        <estadisticas>
+          <posesion>56</posesion>
+          <tiros>7</tiros>
+          <tirosAPuerta>3</tirosAPuerta>
+          <faltas>14</faltas>
+          <tirosEsquina>1</tirosEsquina>
+        </estadisticas>
+        <!-- Autogol de Francisco Nevárez (FC Juárez), acreditado a León -->
+        <gol jugador="Francisco Nevárez" minuto="76" tipo="autogol"/>
+        <gol jugador="Alfonso Alvarado" minuto="90" adicional="9"/>
+        <tarjeta tipo="amarilla" jugador="Sebastián Vegas" minuto="3"/>
+        <tarjeta tipo="amarilla" jugador="Juan José Guevara" minuto="53"/>
+      </equipoLocal>
+      <equipoVisitante>
+        <nombre>FC Juárez</nombre>
+        <estadisticas>
+          <posesion>44</posesion>
+          <tiros>9</tiros>
+          <tirosAPuerta>1</tirosAPuerta>
+          <faltas>14</faltas>
+          <tirosEsquina>4</tirosEsquina>
+        </estadisticas>
+        <gol jugador="Óscar Estupiñán" minuto="90" adicional="4" tipo="penal"/>
+        <tarjeta tipo="amarilla" jugador="Jesús Murillo" minuto="79"/>
+        <tarjeta tipo="amarilla" jugador="Francisco Nevárez" minuto="83"/>
+      </equipoVisitante>
+      <marcador golesLocal="2" golesVisitante="1"/>
+      <estadio ciudad="León, Guanajuato">Estadio León</estadio>
+    </partido>
+
+    <partido id="P003" fecha="2026-09-27" hora="21:10" estado="finalizado">
+      <equipoLocal>
+        <nombre>Necaxa</nombre>
+        <estadisticas>
+          <posesion>54</posesion>
+          <tiros>15</tiros>
+          <tirosAPuerta>3</tirosAPuerta>
+          <faltas>16</faltas>
+          <tirosEsquina>3</tirosEsquina>
+        </estadisticas>
+        <gol jugador="Owen González" minuto="37"/>
+        <gol jugador="Julián Carranza" minuto="43" tipo="penal"/>
+        <tarjeta tipo="amarilla" jugador="Raúl Martínez" minuto="62"/>
+        <tarjeta tipo="amarilla" jugador="Diego Ochoa" minuto="87"/>
+        <tarjeta tipo="amarilla" jugador="Javier Ruiz" minuto="90"/>
+      </equipoLocal>
+      <equipoVisitante>
+        <nombre>América</nombre>
+        <estadisticas>
+          <posesion>46</posesion>
+          <tiros>20</tiros>
+          <tirosAPuerta>7</tirosAPuerta>
+          <faltas>6</faltas>
+          <tirosEsquina>5</tirosEsquina>
+        </estadisticas>
+        <gol jugador="Henry Martín" minuto="40"/>
+        <gol jugador="Henry Martín" minuto="45" adicional="10" tipo="penal"/>
+        <gol jugador="Miguel Borja" minuto="56"/>
+        <gol jugador="Henry Martín" minuto="75" tipo="penal"/>
+        <tarjeta tipo="amarilla" jugador="Érick Sánchez" minuto="33"/>
+        <tarjeta tipo="amarilla" jugador="Cristian Borja" minuto="90" adicional="5"/>
+      </equipoVisitante>
+      <marcador golesLocal="2" golesVisitante="4"/>
+      <estadio ciudad="Aguascalientes">Estadio Victoria</estadio>
+    </partido>
+
+  </jornada>
+</liga>

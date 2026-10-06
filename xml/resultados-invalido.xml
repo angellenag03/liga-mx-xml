@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE liga SYSTEM "../dtd/resultados.dtd">
+<!--
+  Archivo de PRUEBAS NEGATIVAS: esta bien formado pero NO es valido.
+  Cada partido introduce un unico error respecto a dtd/resultados.dtd.
+  Validar con el comando xmllint usando las opciones noout y valid (ver README.md).
+-->
+<liga competencia="Liga MX" torneo="Apertura 2026" temporada="2026-2027">
+  <jornada numero="10">
+
+    <!-- Prueba 1: falta el equipo visitante -->
+    <partido id="P101" fecha="2026-09-27" estado="finalizado">
+      <equipoLocal><nombre>Pumas UNAM</nombre></equipoLocal>
+      <marcador golesLocal="2" golesVisitante="3"/>
+      <estadio>Estadio Olímpico Universitario</estadio>
+    </partido>
+
+    <!-- Prueba 2: dos equipos locales -->
+    <partido id="P102" fecha="2026-09-27" estado="finalizado">
+      <equipoLocal><nombre>León</nombre></equipoLocal>
+      <equipoLocal><nombre>FC Juárez</nombre></equipoLocal>
+      <equipoVisitante><nombre>FC Juárez</nombre></equipoVisitante>
+      <marcador golesLocal="2" golesVisitante="1"/>
+      <estadio>Estadio León</estadio>
+    </partido>
+
+    <!-- Prueba 3: orden incorrecto (marcador antes de los equipos) -->
+    <partido id="P103" fecha="2026-09-27" estado="finalizado">
+      <marcador golesLocal="2" golesVisitante="4"/>
+      <equipoLocal><nombre>Necaxa</nombre></equipoLocal>
+      <equipoVisitante><nombre>América</nombre></equipoVisitante>
+      <estadio>Estadio Victoria</estadio>
+    </partido>
+
+    <!-- Prueba 4: falta un atributo obligatorio (estado del partido) -->
+    <partido id="P104" fecha="2026-09-27">
+      <equipoLocal><nombre>Pumas UNAM</nombre></equipoLocal>
+      <equipoVisitante><nombre>Atlético de San Luis</nombre></equipoVisitante>
+      <marcador golesLocal="2" golesVisitante="3"/>
+      <estadio>Estadio Olímpico Universitario</estadio>
+    </partido>
+
+    <!-- Prueba 5: ID duplicado (P105 aparece dos veces) -->
+    <partido id="P105" fecha="2026-09-27" estado="finalizado">
+      <equipoLocal><nombre>León</nombre></equipoLocal>
+      <equipoVisitante><nombre>FC Juárez</nombre></equipoVisitante>
+      <marcador golesLocal="2" golesVisitante="1"/>
+      <estadio>Estadio León</estadio>
+    </partido>
+    <partido id="P105" fecha="2026-09-27" estado="finalizado">
+      <equipoLocal><nombre>Necaxa</nombre></equipoLocal>
+      <equipoVisitante><nombre>América</nombre></equipoVisitante>
+      <marcador golesLocal="2" golesVisitante="4"/>
+      <estadio>Estadio Victoria</estadio>
+    </partido>
+
+    <!-- Prueba 6: elemento no declarado en el DTD (arbitro) -->
+    <partido id="P106" fecha="2026-09-27" estado="finalizado">
+      <equipoLocal><nombre>Necaxa</nombre></equipoLocal>
+      <equipoVisitante><nombre>América</nombre></equipoVisitante>
+      <marcador golesLocal="2" golesVisitante="4"/>
+      <estadio>Estadio Victoria</estadio>
+      <arbitro>Por definir</arbitro>
+    </partido>
+
+  </jornada>
+</liga>
